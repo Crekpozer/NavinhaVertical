@@ -4,7 +4,7 @@ extends Node2D
 # Velocidade do projétil
 @export var speed: float = 250
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Função chamada a cada frame. 'delta' é o tempo decorrido desde o frame anterior.
 func _process(delta: float) -> void:
 	
 	# Move o projetil para cima (No eixo y negativo)
@@ -14,26 +14,12 @@ func _process(delta: float) -> void:
 	if position.y < 0:
 		queue_free()
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	# DEBUG
-	print(body)
-	
-	# Detecta se o corpo que ele colidiu faz parte do grupo de inimigos
-	if body is Enemy:
-		print("é um inimigo")
-		# Destroi o inimigo e o projetil
-		body.queue_free()
-		queue_free()
-		return
-	
-	print("não é um inimigo")
-
-
+# Função chamada quando o projétil colide com uma área2D
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	# DEBUG
+	# Imprime a área colidida para depuração
 	print(area)
 	
-	# Detecta se o corpo que ele colidiu faz parte do grupo de inimigos
+	# Verifica se a área colidida perfentece ao grupo de inimigos
 	if area.is_in_group("enemies"):
 		print("é um inimigo")
 		# Destroi o inimigo e o projetil
@@ -41,4 +27,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		queue_free()
 		return
 	
+	# Se não for um inimigo, imprime a mensagem
 	print("não é um inimigo")
