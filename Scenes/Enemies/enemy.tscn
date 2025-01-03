@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://thyjyesm23at"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/enemy.gd" id="1_jcscx"]
+[ext_resource type="Texture2D" uid="uid://6eehn6vbirv8" path="res://Addon/Art/kenney_pixel-shmup/Ships/ship_0001.png" id="1_qdm8o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1x78"]
+size = Vector2(31.9999, 24.0001)
+
+[node name="Enemy" type="Area2D" groups=["enemies"]]
+position = Vector2(243, 156)
+rotation = 3.14159
+script = ExtResource("1_jcscx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qdm8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g1x78")

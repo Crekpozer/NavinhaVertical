@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://bis665jbl3kyb"]
+
+[ext_resource type="Texture2D" uid="uid://thgfk226qts2" path="res://Addon/Art/kenney_pixel-shmup/Preview.png" id="1_qdo2k"]
+[ext_resource type="Texture2D" uid="uid://b0ala7ysqwg7p" path="res://Addon/Art/kenney_pixel-shmup/Tilemap/ships.png" id="2_e4p6r"]
+[ext_resource type="Texture2D" uid="uid://cmoqwbm01m1s6" path="res://Scenes/TileMaps/tiles.png" id="3_gelru"]
+[ext_resource type="Texture2D" uid="uid://dmyfbg7gcxyw0" path="res://Addon/Art/kenney_pixel-shmup/Sample.png" id="4_ahvwg"]
+[ext_resource type="Texture2D" uid="uid://bak4ngvn601oc" path="res://Addon/Art/kenney_tiny-battle/Preview.png" id="5_62fdk"]
+[ext_resource type="Texture2D" uid="uid://brgfg80la80kv" path="res://Addon/Art/kenney_tiny-battle/Sample.png" id="6_ho07e"]
+[ext_resource type="Texture2D" uid="uid://cunnn113w2to5" path="res://Scenes/TileMaps/tilemap.png" id="7_hl2un"]
+[ext_resource type="Texture2D" uid="uid://d23f83o8geotp" path="res://Character/Art/ship_0000.png" id="8_lvgrc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kffab"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_yhil7"]
+font_size = 50
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ejvdk"]
+radius = 5.0
+height = 20.0
+
+[node name="AssetScene" type="Node2D"]
+
+[node name="Kenney - Pixel Shmup" type="Panel" parent="."]
+offset_left = 1475.0
+offset_top = 29.0
+offset_right = 2748.0
+offset_bottom = 1173.0
+
+[node name="Label" type="Label" parent="Kenney - Pixel Shmup"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -259.5
+offset_top = -107.0
+offset_right = 260.5
+offset_bottom = -38.0
+grow_horizontal = 2
+text = "Kenney - Pixel Shmup"
+label_settings = SubResource("LabelSettings_kffab")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Preview" type="Sprite2D" parent="Kenney - Pixel Shmup"]
+position = Vector2(472, 274)
+texture = ExtResource("1_qdo2k")
+
+[node name="Ships" type="Sprite2D" parent="Kenney - Pixel Shmup"]
+position = Vector2(1114, 425)
+texture = ExtResource("2_e4p6r")
+
+[node name="Tiles" type="Sprite2D" parent="Kenney - Pixel Shmup"]
+position = Vector2(1101, 752)
+texture = ExtResource("3_gelru")
+
+[node name="Sample" type="Sprite2D" parent="Kenney - Pixel Shmup"]
+position = Vector2(493, 847)
+texture = ExtResource("4_ahvwg")
+
+[node name="Kenney - Tiny Battle" type="Panel" parent="."]
+offset_left = 2791.0
+offset_top = 32.0
+offset_right = 4208.0
+offset_bottom = 1184.0
+
+[node name="Label" type="Label" parent="Kenney - Tiny Battle"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = -92.0
+offset_right = 240.5
+offset_bottom = -23.0
+grow_horizontal = 2
+text = "Kenney - Tiny Battle"
+label_settings = SubResource("LabelSettings_yhil7")
+
+[node name="Preview" type="Sprite2D" parent="Kenney - Tiny Battle"]
+position = Vector2(511, 291)
+texture = ExtResource("5_62fdk")
+
+[node name="Sample" type="Sprite2D" parent="Kenney - Tiny Battle"]
+position = Vector2(519, 843)
+texture = ExtResource("6_ho07e")
+
+[node name="Tilemap" type="Sprite2D" parent="Kenney - Tiny Battle"]
+position = Vector2(1204, 540)
+texture = ExtResource("7_hl2un")
+
+[node name="PlayerCharacter" type="CharacterBody2D" parent="."]
+
+[node name="ShipSprite" type="Sprite2D" parent="PlayerCharacter"]
+texture = ExtResource("8_lvgrc")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="PlayerCharacter"]
+shape = SubResource("CapsuleShape2D_ejvdk")
