@@ -36,4 +36,4 @@ position = Vector2(11, -3)
 
 [node name="RechargeTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.5
+wait_time = 0.3

@@ -1,10 +1,16 @@
 class_name Enemy
 extends Node2D
 
+# Velocidade de movimento horizontal
+@export var speed: float = 10
+# Amplitude do movimento (quão longe a nave vai para cada lado)
+@export var amplitude: float = 900
+# Posição inicial da nave
+var startPosition: Vector2
+
+var isOnScreen: bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	# Salva a posição inicial
+	startPosition = position
